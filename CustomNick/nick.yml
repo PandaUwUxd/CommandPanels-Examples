@@ -1,0 +1,35 @@
+# |------------------------------------------------------------------------
+# |                       CommandPanels Example File
+# |                            By RockyHawk v2.2
+# | https://www.spigotmc.org/resources/command-panels-custom-guis.67788/
+# |------------------------------------------------------------------------
+panels:
+  nick:
+    rows: 4
+    title: '&7[&bCambio de nick&7]'
+    perm: default
+    commands:
+    - nick %cp-player-nick%
+    sound-on-open: BLOCK_NOTE_BLOCK_CHIME
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '13':
+        material: cps= self
+        stack: 1
+        name: '&l%cp-player-nick% &b» &7Mensaje de prueba.'
+      '20':
+        material: EMERALD_BLOCK
+        stack: 1
+        name: '&2&lAceptar'
+        commands:
+          - console= enick %cp-player-name% %cp-player-nick%
+          - 'cpc'
+          - console= title %cp-player-name% times 20 60 20
+          - console= title %cp-player-name% title {"text":"Listo","color":"green"}
+          - console= title %cp-player-name% subtitle {"text":"Nick cambiado con exito","color":"green"}
+      '24':
+        material: REDSTONE_BLOCK
+        stack: 1
+        name: '&4&lCancelar'
+        commands:
+          - 'cpc'
