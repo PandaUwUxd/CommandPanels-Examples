@@ -1,0 +1,35 @@
+# |------------------------------------------------------------------------
+# |                       CommandPanels Example File
+# |                            By RockyHawk v2.2
+# | https://www.spigotmc.org/resources/command-panels-custom-guis.67788/
+# |------------------------------------------------------------------------
+panels:
+  prefix:
+    rows: 4
+    title: '&7[&bSeleccion de prefix&7]'
+    perm: default
+    commands:
+    - prefix %cp-player-prefix%
+    sound-on-open: BLOCK_NOTE_BLOCK_CHIME
+    empty: BLACK_STAINED_GLASS_PANE
+    item:
+      '13':
+        material: cps= self
+        stack: 1
+        name: '&l%cp-player-prefix% &l%cp-player-displayname%'
+      '20':
+        material: EMERALD_BLOCK
+        stack: 1
+        name: '&2&lAceptar'
+        commands:
+          - console= lp user %cp-player-name% meta setprefix %cp-player-prefix%
+          - 'cpc'
+          - console= title %cp-player-name% times 20 60 20
+          - console= title %cp-player-name% title {"text":"Listo","color":"green"}
+          - console= title %cp-player-name% subtitle {"text":"Prefix cambiado con exito","color":"green"}
+      '24':
+        material: REDSTONE_BLOCK
+        stack: 1
+        name: '&4&lCancelar'
+        commands:
+          - 'cpc'
