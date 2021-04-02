@@ -1,0 +1,4 @@
+Requisitos:
+- Essentials
+- LuckPerms
+- PlaceholderAPI
